@@ -41,7 +41,6 @@ public class AgregadoPonegal_Lab3 {
         };
 
         do {
-            // Display conversion options
             for (int i = 0; i < conversions.length; i++) {
                 System.out.println("[" + (i + 1) + "] " + conversions[i]);
             }
@@ -51,11 +50,10 @@ public class AgregadoPonegal_Lab3 {
             if (choice >= 0 && choice < conversions.length) {
                 System.out.print("Enter Value: ");
                 int inputValue = scanner.nextInt();
+                
+                Object result = methods[choice].apply(inputValue);    // Call the appropriate conversion method
 
-                // Call the appropriate conversion method
-                Object result = methods[choice].apply(inputValue);
-
-                // Display the result
+                // Display result
                 System.out.println(conversions[choice] + ": " + result);
             } else {
                 System.out.println("Invalid choice. Please try again.");
